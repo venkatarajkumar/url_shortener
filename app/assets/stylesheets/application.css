@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ .nav{
+    background-color: #D04258;
+    display: flex;
+
+}
+
+.nav_a_tag{
+    padding-right: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.nav_a_tag:hover{
+    color: #ccc;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%; 
+}
+
+.body h3{
+    color: #D04258;
+}
+
+.submit_btn{
+    background-color: #D04258;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+
+}
+
+input{
+    border-color: #D04258;
+    border-radius: 15px;
+    height:30px;
+    width: 100%;
+    outline: none;
+}
+
+::placeholder{
+    color: #D04258;
+    padding-left: 10px;
+}
+
+.status{
+    color: #D04258;
+    font-weight: bold;
+    font-size: large;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+th,td{
+    padding: 15px;
+}
+
+th{
+    color: #D04258;
+}

@@ -1,0 +1,74 @@
+<div class="nav">
+    <a href="/" class="nav_a_tag"><h1>Url Shortener</h1></a>
+</div>
+
+<div class="body">
+    <div>
+        <input type="text" name="url_name" id="url_name" placeholder="Enter URL Name" />
+    </div><br><br>
+
+    <div>
+        <input type="text" name="long_url" id="long_url" placeholder="Enter Long URL"/>
+    </div><br><br>
+    
+    <a href="javascript:void(0);" onclick="submit(event)" class="submit_btn">Submit</a>
+    <div id="status" class="status"></div><br>
+
+    <table>
+    <tr>
+        <th>URL Name</th>
+        <th>Short URL</th>
+        <th>Long URL</th>
+        <th>Edit URL</th>
+        <th>Delete URL</th>
+    </tr>
+    <% @urls.each do |url| %>
+        <tr>
+            <td><%= url.url_name %></td>
+            <td><%= link_to url.short_url, url.short_url %></td>
+            <td><%= link_to url.long_url.length>30 ? url.long_url.first(30)+"..." :url.long_url.first(30) , url.long_url %></td>
+            <td><%= link_to "Edit", "/edit/"+url.id.to_s %></td>
+            <td><%= link_to "Delete", "/delete/"+url.id.to_s %></td>
+        </tr>
+    <% end %>
+    </table>
+</div>
+
+<script type="text/javascript">
+function submit(e){
+    e.preventDefault();
+    if(document.getElementById("url_name").value.length>0 && document.getElementById("long_url").value.length>0)
+    {
+    $.ajax({
+        method:"POST",
+        url: "/urls/create",
+        headers: {"Content-Type":"application/json; charset=UTF-8"},
+        data: JSON.stringify(
+              {
+                url_name: document.getElementById("url_name").value,
+                long_url: document.getElementById("long_url").value
+              }),
+        success: function(data)
+        {
+            window.location.reload();
+        },
+        error: function(data){
+            var div = document.createElement("div");
+            console.log(data);
+            div.innerHTML = "<br><br>"+JSON.parse(data["responseText"])["message"]+"<br><br>";
+            document.getElementById("status").innerHTML = "";
+            document.getElementById("status").appendChild(div);
+            document.querySelector("#status").style.visibility = "visible";
+        }
+    });
+    }
+    else{
+        var div = document.createElement("div");
+        div.innerHTML = "<br><br>"+"Input field should not be empty."+"<br><br>";
+        document.getElementById("status").innerHTML = "";
+        document.getElementById("status").appendChild(div);
+        document.querySelector("#status").style.visibility = "visible";
+    }
+}
+
+</script>

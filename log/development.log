@@ -1,0 +1,1235 @@
+  [1m[35m (106.6ms)[0m  [1m[35mCREATE DATABASE "url-shortener-app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (84.6ms)[0m  [1m[35mCREATE DATABASE "url-shortener-app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(359104571884258200)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUrls (20211123122220)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "urls" ("id" bigserial primary key, "url_name" character varying, "long_url" character varying, "short_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20211123122220_create_urls.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211123122220"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-11-23 12:23:12.880480"], ["updated_at", "2021-11-23 12:23:12.880480"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(359104571884258200)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-11-23 17:59:31 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rajkumar/.rvm/gems/ruby-2.4.9/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 146ms (Views: 138.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:01:05 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:01:06 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.2ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/urls/create" for ::1 at 2021-11-23 18:01:20 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"url_name"=>"Flipkart E waste", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks", "url"=>{"url_name"=>"Flipkart E waste", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.6) lib/action_controller/metal/request_forgery_protection.rb:215:in `handle_unverified_request'
+actionpack (5.2.6) lib/action_controller/metal/request_forgery_protection.rb:247:in `handle_unverified_request'
+actionpack (5.2.6) lib/action_controller/metal/request_forgery_protection.rb:242:in `verify_authenticity_token'
+activesupport (5.2.6) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.6) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.6) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.6) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.6) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.6) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.6) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.6) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.6) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.6) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.6) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.6) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.6) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.6) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/urls/create" for ::1 at 2021-11-23 18:01:22 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"url_name"=>"Flipkart E waste", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks", "url"=>{"url_name"=>"Flipkart E waste", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.6) lib/action_controller/metal/request_forgery_protection.rb:215:in `handle_unverified_request'
+actionpack (5.2.6) lib/action_controller/metal/request_forgery_protection.rb:247:in `handle_unverified_request'
+actionpack (5.2.6) lib/action_controller/metal/request_forgery_protection.rb:242:in `verify_authenticity_token'
+activesupport (5.2.6) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.6) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.6) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.6) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.6) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.6) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.6) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.6) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.6) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.6) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.6) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.6) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.6) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.6) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.6) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.6) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.6) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.6) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.6) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.6) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.6) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.6) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/urls/create" for ::1 at 2021-11-23 18:01:55 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"url_name"=>"Flipkart E waste", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks", "url"=>{"url_name"=>"Flipkart E waste", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:17
+  [1m[36mUrl Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) LIMIT $2[0m  [["url_name", "Flipkart E waste"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:17
+  [1m[36mUrl Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) LIMIT $2[0m  [["long_url", "https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:17
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("url_name", "long_url", "short_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["url_name", "Flipkart E waste"], ["long_url", "https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"], ["short_url", "http://localhost:3000/surl/ker06f6y"], ["created_at", "2021-11-23 12:31:55.566882"], ["updated_at", "2021-11-23 12:31:55.566882"]]
+  ↳ app/controllers/urls_controller.rb:17
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:17
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:01:55 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:01:58 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/edit/1" for ::1 at 2021-11-23 18:02:06 +0530
+Processing by UrlsController#edit_url as */*
+  Parameters: {"url_name"=>"Flipkart E waste", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks", "id"=>"1", "url"=>{"url_name"=>"Flipkart E waste", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["url_name", "Flipkart E waste"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["long_url", "https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:35
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:02:06 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.2ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:14 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:02:25 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:27 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 22.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:02:40 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:02:41 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:44 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:50 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 20.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:51 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 24ms (Views: 18.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:52 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 19.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:52 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 23ms (Views: 18.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:52 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 28.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:52 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:53 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:53 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:56 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:02:59 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 24ms (Views: 19.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:06:16 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/edit/1" for ::1 at 2021-11-23 18:07:07 +0530
+Processing by UrlsController#edit_url as */*
+  Parameters: {"url_name"=>"Flipkart", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer", "id"=>"1", "url"=>{"url_name"=>"Flipkart", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["url_name", "Flipkart"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["long_url", "https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Update (0.4ms)[0m  [1m[33mUPDATE "urls" SET "url_name" = $1, "long_url" = $2, "updated_at" = $3 WHERE "urls"."id" = $4[0m  [["url_name", "Flipkart"], ["long_url", "https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer"], ["updated_at", "2021-11-23 12:37:07.588174"], ["id", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:35
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:07:07 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:07:28 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 41ms (Views: 34.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/edit/1" for ::1 at 2021-11-23 18:07:41 +0530
+Processing by UrlsController#edit_url as */*
+  Parameters: {"url_name"=>"Flipkart", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks", "id"=>"1", "url"=>{"url_name"=>"Flipkart", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["url_name", "Flipkart"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["long_url", "https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Update (0.5ms)[0m  [1m[33mUPDATE "urls" SET "long_url" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["long_url", "https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"], ["updated_at", "2021-11-23 12:37:41.386539"], ["id", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:35
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:07:41 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:07:56 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/edit/1" for ::1 at 2021-11-23 18:08:02 +0530
+Processing by UrlsController#edit_url as */*
+  Parameters: {"url_name"=>"Flipkart E Waste", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks", "id"=>"1", "url"=>{"url_name"=>"Flipkart E Waste", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["url_name", "Flipkart E Waste"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["long_url", "https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Update (0.3ms)[0m  [1m[33mUPDATE "urls" SET "url_name" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["url_name", "Flipkart E Waste"], ["updated_at", "2021-11-23 12:38:02.524515"], ["id", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:35
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:08:02 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:08:07 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 20.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:08:20 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 18.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:08:21 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:30
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/edit/1" for ::1 at 2021-11-23 18:08:52 +0530
+Processing by UrlsController#edit_url as */*
+  Parameters: {"url_name"=>"Flipkart E Waste", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks", "id"=>"1", "url"=>{"url_name"=>"Flipkart E Waste", "long_url"=>"https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["url_name", "Flipkart E Waste"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[36mUrl Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["long_url", "https://www.flipkart.com/pages/ewaste-compliance-tnc?otracker=undefined_footer_navlinks"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:35
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:08:52 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:10:27 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering urls/edit.html.erb within layouts/application
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE (id='1') LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/rajkumar/.rvm/rubies/ruby-2.4.9/lib/ruby/gems/2.4.0/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+  Rendered urls/edit.html.erb within layouts/application (20.3ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `url_name' for #<Url::ActiveRecord_Relation:0x00007f37adeac6a8>):
+     5: <div class="body">
+     6:     <h3>Update Url Details</h3>
+     7:     <div>
+     8:         <input type="text" name="url_name" id="url_name" value=<%=@url.url_name%> >
+     9:     </div><br><br>
+    10:     <div>
+    11:         <input type="text" name="long_url" id="long_url" value=<%=@url.long_url%> >
+  
+app/views/urls/edit.html.erb:8:in `_app_views_urls_edit_html_erb__2924752369913378879_69938558876080'
+Started GET "/edit/1" for ::1 at 2021-11-23 18:11:36 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 17.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:14:24 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 39ms (Views: 32.0ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/urls/create" for ::1 at 2021-11-23 18:15:05 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"url_name"=>"Twitter URL", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates", "url"=>{"url_name"=>"Twitter URL", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:17
+  [1m[36mUrl Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) LIMIT $2[0m  [["url_name", "Twitter URL"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:17
+  [1m[36mUrl Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) LIMIT $2[0m  [["long_url", "https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:17
+  [1m[36mUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "urls" ("url_name", "long_url", "short_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["url_name", "Twitter URL"], ["long_url", "https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates"], ["short_url", "http://localhost:3000/surl/463r2pl9"], ["created_at", "2021-11-23 12:45:05.145167"], ["updated_at", "2021-11-23 12:45:05.145167"]]
+  ↳ app/controllers/urls_controller.rb:17
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:17
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:15:05 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/edit/1" for ::1 at 2021-11-23 18:15:08 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='1')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:15:11 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:15:13 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 21.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:15:50 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 26ms (Views: 21.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:15:52 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:15:54 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 34ms (Views: 29.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:17:45 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `type' for "Twitter URL":String):
+  
+app/controllers/urls_controller.rb:30:in `edit'
+Started GET "/edit/2" for ::1 at 2021-11-23 18:19:38 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `type' for "Twitter URL":String):
+  
+app/controllers/urls_controller.rb:30:in `edit'
+Started GET "/edit/2" for ::1 at 2021-11-23 18:19:39 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `type' for "Twitter URL":String):
+  
+app/controllers/urls_controller.rb:30:in `edit'
+Started GET "/edit/2" for ::1 at 2021-11-23 18:19:53 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15ms (Views: 10.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:20:28 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:20:29 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:20:30 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:20:30 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:20:30 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:20:30 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 26ms (Views: 20.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:20:31 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:23:50 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `body' for "Twitter URL":String):
+     5: <div class="body">
+     6:     <h3>Update Url Details</h3>
+     7:     <div>
+     8:         <input type="text" name="url_name" id="url_name" value=<%=raw @url_name.body%> >
+     9:     </div><br><br>
+    10:     <div>
+    11:         <input type="text" name="long_url" id="long_url" value=<%=@long_url%> >
+  
+app/views/urls/edit.html.erb:8:in `_app_views_urls_edit_html_erb__2924752369913378879_69938643681500'
+Started GET "/edit/2" for ::1 at 2021-11-23 18:23:58 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 23.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:26:49 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:26:50 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:27:06 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 19.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/edit/2" for ::1 at 2021-11-23 18:27:12 +0530
+Processing by UrlsController#edit_url as */*
+  Parameters: {"url_name"=>"Twitter URL", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates", "id"=>"2", "url"=>{"url_name"=>"Twitter URL", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:36
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:37
+  [1m[36mUrl Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["url_name", "Twitter URL"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:37
+  [1m[36mUrl Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["long_url", "https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:37
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:27:12 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:27:23 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 35ms (Views: 29.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/edit/2" for ::1 at 2021-11-23 18:27:28 +0530
+Processing by UrlsController#edit_url as */*
+  Parameters: {"url_name"=>"Flipkart E Waste", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates", "id"=>"2", "url"=>{"url_name"=>"Flipkart E Waste", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:37
+  [1m[36mUrl Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["url_name", "Flipkart E Waste"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:37
+  [1m[36mUrl Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["long_url", "https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:37
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/urls_controller.rb:37
+Completed 404 Not Found in 16ms (Views: 0.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:27:31 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/delete/1" for ::1 at 2021-11-23 18:27:38 +0530
+Processing by UrlsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:46
+  [1m[36mUrl Destroy (0.5ms)[0m  [1m[31mDELETE FROM "urls" WHERE "urls"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/urls_controller.rb:46
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:46
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:27:38 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.5ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:27:45 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:32
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 22.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/edit/2" for ::1 at 2021-11-23 18:27:46 +0530
+Processing by UrlsController#edit_url as */*
+  Parameters: {"url_name"=>"Twitter URL", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates", "id"=>"2", "url"=>{"url_name"=>"Twitter URL", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:37
+  [1m[36mUrl Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["url_name", "Twitter URL"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:37
+  [1m[36mUrl Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["long_url", "https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:37
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:27:46 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:31:38 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.3ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 24ms (Views: 17.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/edit/2" for ::1 at 2021-11-23 18:31:41 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='2')[0m
+  ↳ app/controllers/urls_controller.rb:24
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:31:42 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.7ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/urls/create" for ::1 at 2021-11-23 18:32:15 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"url_name"=>"Twitter URL", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates", "url"=>{"url_name"=>"Twitter URL", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:14
+  [1m[36mUrl Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) LIMIT $2[0m  [["url_name", "Twitter URL"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:14
+  [1m[36mUrl Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) LIMIT $2[0m  [["long_url", "https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate-affiliates"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/urls_controller.rb:14
+Completed 404 Not Found in 9ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/urls/create" for ::1 at 2021-11-23 18:32:26 +0530
+Processing by UrlsController#create as */*
+  Parameters: {"url_name"=>"Twitter", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate", "url"=>{"url_name"=>"Twitter", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:14
+  [1m[36mUrl Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) LIMIT $2[0m  [["url_name", "Twitter"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:14
+  [1m[36mUrl Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) LIMIT $2[0m  [["long_url", "https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate"], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:14
+  [1m[36mUrl Create (0.5ms)[0m  [1m[32mINSERT INTO "urls" ("url_name", "long_url", "short_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["url_name", "Twitter"], ["long_url", "https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate"], ["short_url", "http://localhost:3000/surl/tucfjdqy"], ["created_at", "2021-11-23 13:02:26.318518"], ["updated_at", "2021-11-23 13:02:26.318518"]]
+  ↳ app/controllers/urls_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/urls_controller.rb:14
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:32:26 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/edit/3" for ::1 at 2021-11-23 18:32:31 +0530
+Processing by UrlsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "urls"."url_name" FROM "urls" WHERE (id='3')[0m
+  ↳ app/controllers/urls_controller.rb:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "urls"."long_url" FROM "urls" WHERE (id='3')[0m
+  ↳ app/controllers/urls_controller.rb:24
+  Rendering urls/edit.html.erb within layouts/application
+  Rendered urls/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 23.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/edit/3" for ::1 at 2021-11-23 18:32:35 +0530
+Processing by UrlsController#edit_url as */*
+  Parameters: {"url_name"=>"Twitter URL", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate", "id"=>"3", "url"=>{"url_name"=>"Twitter URL", "long_url"=>"https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUrl Load (0.4ms)[0m  [1m[34mSELECT  "urls".* FROM "urls" WHERE "urls"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[36mUrl Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."url_name") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["url_name", "Twitter URL"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[36mUrl Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "urls" WHERE LOWER("urls"."long_url") = LOWER($1) AND "urls"."id" != $2 LIMIT $3[0m  [["long_url", "https://help.twitter.com/en/rules-and-policies/twitter-services-and-corporate"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/urls_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/urls_controller.rb:29
+Completed 404 Not Found in 10ms (Views: 0.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:32:38 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (0.6ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-11-23 18:54:33 +0530
+Processing by UrlsController#index as HTML
+  Rendering urls/index.html.erb within layouts/application
+  [1m[36mUrl Load (1.2ms)[0m  [1m[34mSELECT "urls".* FROM "urls" ORDER BY updated_at DESC[0m
+  ↳ app/views/urls/index.html.erb:25
+  Rendered urls/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 1.2ms)
+
+

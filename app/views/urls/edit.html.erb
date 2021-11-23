@@ -1,0 +1,55 @@
+<div class="nav">
+    <a href="/" class="nav_a_tag"><h1>Url Shortener</h1></a>
+</div>
+
+<div class="body">
+    <h3>Update Url Details</h3>
+    <div>
+        <input type="text" name="url_name" id="url_name" value="<%=@url_name%>" >
+    </div><br><br>
+    <div>
+        <input type="text" name="long_url" id="long_url" value="<%=@long_url%>" >
+    </div><br><br>
+    <a href="javascript:void(0);" onclick="edit_url(event)" class="submit_btn">Submit</a><br><br>
+    
+    <div id="status" class="status"></div>
+</div>
+
+
+<script type="text/javascript">
+function edit_url(e){
+    e.preventDefault();
+    if(document.getElementById("url_name").value.length>0 && document.getElementById("long_url").value.length>0)
+    {
+    $.ajax({
+        method:"POST",
+        url: "/edit/"+window.location.href.toString().split("/")[4],
+        headers: {"Content-Type":"application/json; charset=UTF-8"},
+        data: JSON.stringify(
+              {
+                url_name: document.getElementById("url_name").value,
+                long_url: document.getElementById("long_url").value
+              }),
+        success: function(data)
+        {
+            window.location.replace("/");
+        },
+        error: function(data){
+            var div = document.createElement("div");
+            div.innerHTML = "<br><br>"+JSON.parse(data["responseText"])["message"]+"<br><br>";
+            document.getElementById("status").innerHTML = "";
+            document.getElementById("status").appendChild(div);
+            document.querySelector("#status").style.visibility = "visible";
+        }
+    });
+    }
+    else{
+        var div = document.createElement("div");
+        div.innerHTML = "<br><br>"+"Input field should not be empty."+"<br><br>";
+        document.getElementById("status").innerHTML = "";
+        document.getElementById("status").appendChild(div);
+        document.querySelector("#status").style.visibility = "visible";
+    }
+}
+
+</script>
